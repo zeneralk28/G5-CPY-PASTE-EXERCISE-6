@@ -36,6 +36,7 @@ if ($conn->connect_error) {
 
     if ($stmt->execute()) {
 
+//samples of header
         header("Location: message_receipt.php?name=$name&email=$email&recipient=$recipient&message=$message");
         exit();
     } else {
