@@ -34,10 +34,28 @@
         } else {
             echo "<p>No data received.</p>";
         }
+        
+        header( "refresh:11;url=index.php" );
         ?>
 
+        <p>You'll be redirected in about</p><div class="countdown" id="countdown">10</div><p>secs. If not, click the button below</p> 
         <a href="index.php"><i class="fas fa-arrow-left"></i> Go Back to the Form</a>
-    </div>
 
+    </div>
+        <script>
+            // JavaScript Countdown
+        let count = 10; 
+        const countdownElement = document.getElementById('countdown');
+
+        const countdown = setInterval(() => {
+            countdownElement.textContent = count;
+            count--;
+
+            if (count < 0) {
+                clearInterval(countdown); 
+                countdownElement.textContent = "0"; 
+            }
+        }, 1000);
+        </script>
 </body>
 </html>
